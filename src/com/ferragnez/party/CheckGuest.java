@@ -11,7 +11,7 @@ public class CheckGuest {
         String tuoNomeCognome = scan.nextLine();
 
         boolean nomeNellaLista = false;
-        for (int i = 0; i < invitatiFerragnez.length && !nomeNellaLista ; i++) {
+        /*for (int i = 0; i < invitatiFerragnez.length && !nomeNellaLista ; i++) {
             if (tuoNomeCognome.equals(invitatiFerragnez[i])) {
                 nomeNellaLista = true;
             }
@@ -23,6 +23,23 @@ public class CheckGuest {
             System.out.println("Sei in lista, prego entri!");
         }
 
+         */
+        int i = 0;
+        while(i<invitatiFerragnez.length && !nomeNellaLista) {
+        if (tuoNomeCognome.equals(invitatiFerragnez[i])){
+            nomeNellaLista = true;
+            }
+        i++;
+        }
+
+        if (!nomeNellaLista) {
+            System.out.println("Non sei in lista, Vattene.");
+        } else {
+            System.out.println("Sei in lista, prego entri!");
+        }
+
         scan.close();
     }
 }
+
+
